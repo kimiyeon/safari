@@ -57,5 +57,5 @@ class CircleOfLife:
 
 
 if __name__ == '__main__':
-    safari = CirleOfLife(5, 5, 2)
+    safari = CircleOfLife(5, 5, 2)
     safari.run(2)
