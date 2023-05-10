@@ -11,7 +11,7 @@ class Animal:
         return Animal(x, y)
     
 class Zebra(Animal):
-    def move(self, occupany_grid):
+    def move(self, occupancy_grid):
         print('<<< NOT IMPLEMENTED >>>')
 
     def breed(self, x, y):
