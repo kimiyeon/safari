@@ -18,6 +18,24 @@ class CircleOfLife:
 
     def display(self):
         print(f'Clock: {self.timestep}')
+        length = 20
+        for i in range(length):
+            print(i, end = '    ')
+        print()            
+        grid = []
+
+        # i = int(0)
+        # for i in range(length):
+        #     grid.append(['*'] * height)
+        # for x in grid:
+        #     grid = ('  '.join(x))
+        #     print(grid)
+
+        for i in range(length):
+            grid.append('*')
+        for i in range(1, 21, 1):
+            print(i, grid)
+
         print_TODO('display()')
         key = input('enter [q] to quit:')
         if key == 'q':
