@@ -20,7 +20,7 @@ class CircleOfLife:
         print(f'Clock: {self.timestep}')
         length = 20
         for i in range(length):
-            print(i, end = '    ')
+            print(i, end = '   ')
         print()            
         grid = []
 
