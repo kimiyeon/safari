@@ -18,8 +18,8 @@ class CircleOfLife:
 
     def display(self):
         print(f'Clock: {self.timestep}')
-        length = 20
-        for i in range(length):
+        world_size = 20
+        for i in range(world_size):
             print(i, end = '   ')
         print()            
         grid = []
@@ -31,7 +31,7 @@ class CircleOfLife:
         #     grid = ('  '.join(x))
         #     print(grid)
 
-        for i in range(length):
+        for i in range(world_size):
             grid.append('*')
         for i in range(1, 21, 1):
             print(i, grid)
@@ -75,5 +75,5 @@ class CircleOfLife:
 
 
 if __name__ == '__main__':
-    safari = CircleOfLife(5, 5, 2)
+    safari = CircleOfLife(20, 5, 2)
     safari.run(2)
