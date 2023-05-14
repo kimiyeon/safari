@@ -6,7 +6,6 @@ class Animal:
 
     def move(self, direction):
         print(f'moving to {direction}.')
-        self.x += 1
 
     def breed(self, x, y):
         return Animal(x, y)
