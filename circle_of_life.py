@@ -5,7 +5,7 @@ def print_TODO(todo):
 
 class CircleOfLife:
     def __init__(self, world_size, num_zebras, num_lions):
-        self.occupancy = [[False for _ in range(world_size)]
+        self.occupancy = [[' ' for _ in range(world_size)]
                           for _ in range(world_size)]
         print_TODO('get random empty coordinates')
         self.zebras = [Animal(0, 0) for _ in range(num_zebras)]
@@ -18,24 +18,45 @@ class CircleOfLife:
 
     def display(self):
         print(f'Clock: {self.timestep}')
-        world_size = 20
-        for i in range(world_size):
-            print(i, end = '   ')
-        print()            
-        grid = []
-
+        for i in range(len(self.occupancy)):
+            print(i, end = '  ')     
+        print()     
+        # grid = []
         # i = int(0)
         # for i in range(length):
         #     grid.append(['*'] * height)
-        # for x in grid:
-        #     grid = ('  '.join(x))
+
+        # for i in range(len(self.occupancy)):
+        #     grid.append(' ')
+        for i, x in zip(range(1, 21, 1),(self.occupancy)):
+            print(i, x)
+        # for i in range(len(self.occupancy)):
+        # grid = [[ _ for i in range(1, 21, 1)
+        #     for x in self.occupancy]
         #     print(grid)
+                
+        # for i in grid:
+        #     grid[i+1] = 'L'
+        # for i in world_size:
+        #     animal[i][i] = 'A'
+        # print('\n'.join(' '.join(row) for row in animal))
+        # for i in range(len(grid)):
+        #     grid[i] = 'L'
+        # for i in self.lions:
+        #     grid.append('L')
+        # for line in grid:
+        #     print(line)
 
-        for i in range(world_size):
-            grid.append('*')
-        for i in range(1, 21, 1):
-            print(i, grid)
-
+        # top_coord_str = ' '.join([f'{coord}' for coord in range(len(self.occupancy))])
+        # print(top_coord_str)
+        # world_size = 20
+        # for i in range(world_size):
+        #     print(i)
+        for animal in self.zebras:
+            self.occupancy[animal.y][animal.x] = 'Z'
+        for animal in self.lions:
+            self.occupancy[animal.y][animal.x] = 'L'
+      
         print_TODO('display()')
         key = input('enter [q] to quit:')
         if key == 'q':
