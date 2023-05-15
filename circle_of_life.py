@@ -23,7 +23,6 @@ class CircleOfLife:
         # print()     
         # for i, x in zip(range(self.occupancy),(self.occupancy)):
         #     print(i, x)
-        world_size = 20
         top_coord_str = ' '.join([f'{coord}' for coord in range(len(self.occupancy))])
         print('   ' + top_coord_str)  
         for animal in self.zebras:
