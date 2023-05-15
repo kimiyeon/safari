@@ -18,46 +18,20 @@ class CircleOfLife:
 
     def display(self):
         print(f'Clock: {self.timestep}')
-        for i in range(len(self.occupancy)):
-            print(i, end = '  ')     
-        print()     
-        # grid = []
-        # i = int(0)
-        # for i in range(length):
-        #     grid.append(['*'] * height)
-
         # for i in range(len(self.occupancy)):
-        #     grid.append(' ')
-        for i, x in zip(range(1, 21, 1),(self.occupancy)):
-            print(i, x)
-        # for i in range(len(self.occupancy)):
-        # grid = [[ _ for i in range(1, 21, 1)
-        #     for x in self.occupancy]
-        #     print(grid)
-                
-        # for i in grid:
-        #     grid[i+1] = 'L'
-        # for i in world_size:
-        #     animal[i][i] = 'A'
-        # print('\n'.join(' '.join(row) for row in animal))
-        # for i in range(len(grid)):
-        #     grid[i] = 'L'
-        # for i in self.lions:
-        #     grid.append('L')
-        # for line in grid:
-        #     print(line)
-
-        # top_coord_str = ' '.join([f'{coord}' for coord in range(len(self.occupancy))])
-        # print(top_coord_str)
-        # world_size = 20
-        # for i in range(world_size):
-        #     print(i)
+        #     print('   ', i, end = '  ')     
+        # print()     
+        # for i, x in zip(range(self.occupancy),(self.occupancy)):
+        #     print(i, x)
+        world_size = 20
+        top_coord_str = ' '.join([f'{coord}' for coord in range(len(self.occupancy))])
+        print('   ' + top_coord_str)  
         for animal in self.zebras:
             self.occupancy[animal.y][animal.x] = 'Z'
         for animal in self.lions:
             self.occupancy[animal.y][animal.x] = 'L'
-      
-        print_TODO('display()')
+        for row, line in enumerate(self.occupancy):
+            print(f'{row:2} ' + ' '.join(line))
         key = input('enter [q] to quit:')
         if key == 'q':
             exit()
