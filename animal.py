@@ -12,8 +12,22 @@ class Animal:
         return Animal(x, y)
     
 class Zebra(Animal):
+
     def move(self, occupancy_grid):
         print('<<< NOT IMPLEMENTED >>>')
 
     def breed(self, x, y):
         print('<<< NOT IMPLEMENTED >>>')
+
+class Lion(Animal):
+    def move(self, occupancy_grid):
+        print("NOT IMPLEMENTED")
+    
+    def breed(self,x, y):
+        print("NOT IMPLEMENTED")
+    
+    def starve(self):
+        print("NOT IMPLEMENTED")
+
+if __name__ == "__main__":
+    print("hi")
