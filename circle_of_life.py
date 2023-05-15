@@ -5,7 +5,7 @@ def print_TODO(todo):
 
 class CircleOfLife:
     def __init__(self, world_size, num_zebras, num_lions):
-        self.occupancy = [[' ' for _ in range(world_size)]
+        self.occupancy = [['.' for _ in range(world_size)]
                           for _ in range(world_size)]
         print_TODO('get random empty coordinates')
         self.zebras = [Animal(0, 0) for _ in range(num_zebras)]
