@@ -26,14 +26,14 @@ class CircleOfLife:
 
     def display(self):
         print(f'Clock: {self.timestep}')
-        top_coord_str = ' '.join([f'{coord}' for coord in range(len(self.grid))])
+        top_coord_str = ' '.join([f'{coord + 1:3}' for coord in range(len(self.grid))])
         print('   ' + top_coord_str)  
         for animal in self.zebras:
             self.grid[animal.y][animal.x] = 'Z'
         for animal in self.lions:
             self.grid[animal.y][animal.x] = 'L'
         for row, line in enumerate(self.grid):
-            print(f'{row:2} ' + ' '.join(line))
+            print(f'{row + 1:3} ' + ' '.join(f'{cell:3}' for cell in line))
         key = input('enter [q] to quit:')
         if key == 'q':
             exit()
@@ -69,4 +69,4 @@ class CircleOfLife:
 
 if __name__ == '__main__':
     safari = CircleOfLife(20, 5, 2)
-    safari.run(5)
+    safari.run(10)
