@@ -26,11 +26,6 @@ class CircleOfLife:
 
     def display(self):
         print(f'Clock: {self.timestep}')
-        # for i in range(len(self.occupancy)):
-        #     print('   ', i, end = '  ')     
-        # print()     
-        # for i, x in zip(range(self.occupancy),(self.occupancy)):
-        #     print(i, x)
         top_coord_str = ' '.join([f'{coord}' for coord in range(len(self.grid))])
         print('   ' + top_coord_str)  
         for animal in self.zebras:
